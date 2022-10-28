@@ -23,17 +23,10 @@ for (let i = 0; i < btnOpenModal.length; i++)
 btnCloseModel.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
 
-// global events happens over the document like button clicks
-// closing the modal when the ESC pressed
-
+// pressing ESC listener
 document.addEventListener('keydown', function (event) {
-  // you can put "e" or anything instead of "event"
-  // the event argument passed as an argument
-  if (event.key === 'Escape') {
-    if (!modal.classList.contains('hidden')) {
-      // if the model doesn't contain the 'hidden' class
-      closeModal();
-    }
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
   }
 });
 
